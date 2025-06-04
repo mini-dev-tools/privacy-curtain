@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Blur Settings</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h3>Blur Settings</h3>
+  <form id="blurForm">
+    <div class="fieldset-container">
+      <fieldset>
+        <legend>Outside Chat Options</legend>
+        
+        <div class="option-row">
+          <span class="option-label">Blur Profile Images</span>
+          <button type="button" class="toggle-button" data-name="blurImage">
+            <div class="toggle-slider"></div>
+          </button>
+        </div>
+        
+        <div class="option-row">
+          <span class="option-label">Blur Names</span>
+          <button type="button" class="toggle-button" data-name="blurName">
+            <div class="toggle-slider"></div>
+          </button>
+        </div>
+        
+        <div class="option-row">
+          <span class="option-label">Blur Messages</span>
+          <button type="button" class="toggle-button" data-name="blurMessage">
+            <div class="toggle-slider"></div>
+          </button>
+        </div>
+        
+        <div class="option-row">
+          <span class="option-label">Blur Everything</span>
+          <button type="button" class="toggle-button" data-name="blurAll">
+            <div class="toggle-slider"></div>
+          </button>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Inside Chat Options</legend>
+        
+        <div class="option-row">
+          <span class="option-label">Blur Last Image</span>
+          <button type="button" class="toggle-button" data-name="blurChatLastImage">
+            <div class="toggle-slider"></div>
+          </button>
+        </div>
+        
+        <div class="option-row">
+          <span class="option-label">Blur All Messages</span>
+          <button type="button" class="toggle-button" data-name="blurChatAllMessages">
+            <div class="toggle-slider"></div>
+          </button>
+        </div>
+        
+        <div class="option-row">
+          <span class="option-label">Blur Name</span>
+          <button type="button" class="toggle-button" data-name="blurChatName">
+            <div class="toggle-slider"></div>
+          </button>
+        </div>
+        
+        <div class="option-row">
+          <span class="option-label">Blur Profile Picture</span>
+          <button type="button" class="toggle-button" data-name="blurChatImage">
+            <div class="toggle-slider"></div>
+          </button>
+        </div>
+      </fieldset>
+    </div>
+
+    <button type="submit" class="save-button">Save</button>
+  </form>
+
+ <script src="popup.js"></script>
+</body>
+</html>
