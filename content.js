@@ -18,8 +18,7 @@ if (typeof window.currentPrefs === 'undefined') {
     blurName: 'span[title][dir="auto"]._ao3e',
     blurUsername: 'span._1wjpf',
     blurMessage: 'div._ak8k span.x1iyjqo2.x6ikm8r.x10wlt62.x1n2onr6.xlyipyv.xuxw1ft.x1rg5ohu._ao3e',
-    blurAll: 'span[title][dir="auto"]._ao3e, span._1wjpf, div._ak8k span._ao3e, img[src]',
-    
+
     // Inside chat selectors (new)
     blurChatImage: 'div[class*="x1n2onr6"][class*="x14yjl9h"]',
     blurChatName: 'div.x78zum5.xdt5ytf[role="button"][data-tab="6"]',
@@ -47,48 +46,56 @@ if (typeof window.currentPrefs === 'undefined') {
     // Build CSS rules based on active preferences
     let cssRules = [];
     
-    if (prefs.blurAll) {
-      cssRules.push(`${selectors.blurAll} { filter: blur(5px) !important; transition: filter 0.2s ease; }`);
-      cssRules.push(`${selectors.blurAll}:hover { filter: none !important; }`);
-    } else {
+
+
+
+  
       // Individual blur options
-      if (prefs.blurImage) {
+    console.log(prefs)
+
+
+      if (prefs.blurImage || prefs.blurAll ) {
+        console.log("image");
         cssRules.push(`${selectors.blurImage} { filter: blur(5px) !important; transition: filter 0.2s ease; }`);
         cssRules.push(`${selectors.blurImage}:hover { filter: none !important; }`);
       }
-      if (prefs.blurName) {
+      if (prefs.blurName || prefs.blurAll ) {
+                console.log("name");
         cssRules.push(`${selectors.blurName} { filter: blur(5px) !important; transition: filter 0.2s ease; }`);
         cssRules.push(`${selectors.blurName}:hover { filter: none !important; }`);
       }
-      if (prefs.blurUsername) {
+      if (prefs.blurUsername || prefs.blurAll ) {
+                console.log("username");
         cssRules.push(`${selectors.blurUsername} { filter: blur(5px) !important; transition: filter 0.2s ease; }`);
         cssRules.push(`${selectors.blurUsername}:hover { filter: none !important; }`);
       }
-      if (prefs.blurMessage) {
+      if (prefs.blurMessage || prefs.blurAll ) {
+                console.log("message");
         cssRules.push(`${selectors.blurMessage} { filter: blur(5px) !important; transition: filter 0.2s ease; }`);
         cssRules.push(`${selectors.blurMessage}:hover { filter: none !important; }`);
       }
-      if (prefs.blurChatImage) {
+      if (prefs.blurChatImage || prefs.blurAll ) {
+                console.log("chateimage");
         cssRules.push(`${selectors.blurChatImage} { filter: blur(5px) !important; transition: filter 0.2s ease; }`);
         cssRules.push(`${selectors.blurChatImage}:hover { filter: none !important; }`);
       }
-      if (prefs.blurChatName) {
+      if (prefs.blurChatName || prefs.blurAll ) {
         cssRules.push(`${selectors.blurChatName} { filter: blur(5px) !important; transition: filter 0.2s ease; }`);
         cssRules.push(`${selectors.blurChatName}:hover { filter: none !important; }`);
       }
-      if (prefs.blurChatLastMessage) {
+      if (prefs.blurChatLastMessage || prefs.blurAll ) {
         cssRules.push(`${selectors.blurChatLastMessage} { filter: blur(5px) !important; transition: filter 0.2s ease; }`);
         cssRules.push(`${selectors.blurChatLastMessage}:hover { filter: none !important; }`);
       }
-      if (prefs.blurChatAllMessages) {
+      if (prefs.blurChatAllMessages || prefs.blurAll ) {
         cssRules.push(`${selectors.blurChatAllMessages} { filter: blur(5px) !important; transition: filter 0.2s ease; }`);
         cssRules.push(`${selectors.blurChatAllMessages}:hover { filter: none !important; }`);
       }
-      if (prefs.blurChatLastImage) {
+      if (prefs.blurChatLastImage || prefs.blurAll ) {
         cssRules.push(`${selectors.blurChatLastImage} { filter: blur(5px) !important; transition: filter 0.2s ease; }`);
         cssRules.push(`${selectors.blurChatLastImage}:hover { filter: none !important; }`);
       }
-    }
+    
 
     style.textContent = cssRules.join('\n');
     document.head.appendChild(style);
