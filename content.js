@@ -17,9 +17,8 @@ if (typeof window.currentPrefs === 'undefined') {
     blurImage: 'img[src]',
     blurName: 'span[title][dir="auto"]._ao3e',
     blurUsername: 'span._1wjpf',
-    blurMessage: 'div._ak8k span.x1iyjqo2.x6ikm8r.x10wlt62.x1n2onr6.xlyipyv.xuxw1ft.x1rg5ohu._ao3e',
+    blurMessage: 'div._ak8k',
 
-    // Inside chat selectors (new)
     blurChatImage: 'div[class*="x1n2onr6"][class*="x14yjl9h"]',
     blurChatName: 'div.x78zum5.xdt5ytf[role="button"][data-tab="6"]',
     blurChatLastMessage: '.message-out:last-child span[dir="ltr"], .message-in:last-child span[dir="ltr"], .focusable-list-item:last-child span[dir="ltr"], ._amkz:last-child span[dir="ltr"], .message-out:last-child .selectable-text, .message-in:last-child .selectable-text',
@@ -45,14 +44,9 @@ if (typeof window.currentPrefs === 'undefined') {
     
     // Build CSS rules based on active preferences
     let cssRules = [];
-    
-
-
-
   
       // Individual blur options
     console.log(prefs)
-
 
       if (prefs.blurImage || prefs.blurAll ) {
         console.log("image");
