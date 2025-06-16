@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("blurForm");
   const toggleButtons = form.querySelectorAll('.toggle-button');
 
-  // Load saved settings
   chrome.storage.sync.get({
     blurImage: false,
     blurName: false,

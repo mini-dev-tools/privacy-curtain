@@ -1,21 +1,27 @@
 {
   "manifest_version": 3,
-  "name": "WhatsApp Blur Toggle",
-  "version": "1.0",
-  "description": "Click the icon to toggle chat blur on WhatsApp Web.",
+  "name": "Blur Toggle for WhatsApp and Gmail",
+  "version": "1.1",
+  "description": "Click the icon to toggle chat blur on WhatsApp Web and Gmail.",
   "permissions": ["storage", "scripting", "activeTab"],
-  "host_permissions": ["https://web.whatsapp.com/*"],
+  "host_permissions": [
+    "https://web.whatsapp.com/*",
+    "https://mail.google.com/*"
+  ],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["https://web.whatsapp.com/*"],
+      "matches": [
+        "https://web.whatsapp.com/*",
+        "https://mail.google.com/*"
+      ],
       "js": ["content.js"]
     }
   ],
   "action": {
-    "default_title": "WhatsApp Blur Toggle",
+    "default_title": "Blur Toggle",
     "default_popup": "index.html"
   }
 }
