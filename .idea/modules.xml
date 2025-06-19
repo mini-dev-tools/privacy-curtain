@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/privacy-tools.iml" filepath="$PROJECT_DIR$/.idea/privacy-tools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/privacy-curtain.iml" filepath="$PROJECT_DIR$/.idea/privacy-curtain.iml" />
     </modules>
   </component>
 </project>

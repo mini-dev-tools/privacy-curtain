@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Blur Toggle Extension",
+  "version": "1.0",
+  "description": "Click the icon to toggle chat blur on WhatsApp, Teams, Gmail, and Outlook.",
+  "permissions": ["storage", "scripting", "activeTab"],
+  "host_permissions": [
+    "https://web.whatsapp.com/*",
+    "https://teams.microsoft.com/*",
+    "https://mail.google.com/*",
+    "https://outlook.live.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://web.whatsapp.com/*",
+        "https://teams.microsoft.com/*",
+        "https://mail.google.com/*",
+        "https://outlook.live.com/*",
+        "https://outlook.office.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+
+      "128": "assets/icon-eye.png"
+    },
+    "default_title": "Blur Toggle",
+    "default_popup": "index.html"
+  }
+}
