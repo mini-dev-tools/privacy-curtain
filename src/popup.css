@@ -150,3 +150,72 @@ legend {
 .icon-button.active-tab:hover {
     box-shadow: 0 4px 12px rgba(62, 80, 161, 0.4);
 }
+
+/* Enhanced Tab Styles */
+.tab-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border: none;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 70px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    border-bottom: 3px solid transparent;
+}
+
+.tab-button:hover {
+    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.tab-button.active-tab {
+    background: linear-gradient(135deg, #3e50a1 0%, #2e3c85 100%);
+    color: white;
+    border-bottom: 3px solid #1e2875;
+    box-shadow: 0 4px 12px rgba(62, 80, 161, 0.3);
+    transform: translateY(-2px);
+}
+
+.tab-button.active-tab:hover {
+    box-shadow: 0 6px 16px rgba(62, 80, 161, 0.4);
+}
+
+.tab-button.current-page {
+    background: linear-gradient(135deg, #28a745 0%, #20893a 100%);
+    color: white;
+    border-bottom: 3px solid #155724;
+    box-shadow: 0 3px 8px rgba(40, 167, 69, 0.3);
+}
+
+.tab-label {
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1;
+}
+
+.tab-icon {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.tab-button.active-tab .tab-label,
+.tab-button.active-tab .tab-icon {
+    color: white;
+    opacity: 1;
+}
+
+.tab-button.current-page .tab-label,
+.tab-button.current-page .tab-icon {
+    color: white;
+    opacity: 1;
+}

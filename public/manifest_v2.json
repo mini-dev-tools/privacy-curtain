@@ -1,10 +1,11 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "Privacy Curtain",
   "version": "1.0",
   "description": "Privacy-focused browser extension that provides selective content blurring across multiple platforms.",
-  "permissions": ["storage", "scripting", "activeTab"],
-  "host_permissions": [
+  "permissions": [
+    "storage",
+    "activeTab",
     "https://web.whatsapp.com/*",
     "https://teams.microsoft.com/*",
     "https://mail.google.com/*",
@@ -12,7 +13,8 @@
     "https://outlook.office.com/*"
   ],
   "background": {
-    "service_worker": "background.js"
+    "scripts": ["background_firefox.js"],
+    "persistent": false
   },
   "content_scripts": [
     {
@@ -34,7 +36,7 @@
     "512": "assets/512.png",
     "1024": "assets/1024.png"
   },
-  "action": {
+  "browser_action": {
     "default_icon": {
       "16": "assets/16.png",
       "32": "assets/32.png",
@@ -43,5 +45,11 @@
     },
     "default_title": "Privacy Curtain",
     "default_popup": "index.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "privacy-curtain@example.com",
+      "strict_min_version": "78.0"
+    }
   }
 }

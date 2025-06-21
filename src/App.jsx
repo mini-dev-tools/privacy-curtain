@@ -229,56 +229,57 @@ const App = () => {
     );
 
     const getPlatformButtonClass = (buttonPlatform) => {
-        let baseClass = `save-button icon-button`;
-
-        if (showSettings) {
-            return `${baseClass} ${showSettings ? "active-tab" : ""}`;
-        }
-
-        // Highlight the button if it matches current platform or current page
+        // Only show active if not in settings mode and this is the selected platform
         const isActive = platform === buttonPlatform && !showSettings;
         const isCurrentPage = currentPagePlatform === buttonPlatform ||
             (buttonPlatform === 'gmail' && currentPagePlatform === 'outlook');
 
         if (isActive) {
-            return `${baseClass} active-tab`;
+            return "active-tab";
         } else if (isCurrentPage) {
-            return `${baseClass} current-page`;
+            return "current-page";
         }
 
-        return baseClass;
+        return "";
     };
 
     return (
         <div>
-            <div style={{ display: "flex", justifyContent: "center", gap: "10px", marginBottom: "15px" }}>
+            <div style={{ 
+                display: "flex", 
+                justifyContent: "center", 
+                gap: "8px", 
+                marginBottom: "20px",
+                borderBottom: "1px solid #e0e0e0",
+                paddingBottom: "10px"
+            }}>
                 <button
-                    className={`save-button icon-button ${showSettings ? "active-tab" : ""}`}
+                    className={`tab-button ${showSettings ? "active-tab" : ""}`}
                     onClick={() => setShowSettings(true)}
-                    title="Settings"
                 >
-                    <i className="bi bi-gear"></i>
+                    <span className="tab-label">Settings</span>
+                    <i className="bi bi-gear tab-icon"></i>
                 </button>
                 <button
-                    className={getPlatformButtonClass("whatsapp")}
+                    className={`tab-button ${getPlatformButtonClass("whatsapp")}`}
                     onClick={() => { setPlatform("whatsapp"); setShowSettings(false); }}
-                    title="WhatsApp"
                 >
-                    <i className="bi bi-whatsapp"></i>
+                    <span className="tab-label">WhatsApp</span>
+                    <i className="bi bi-whatsapp tab-icon"></i>
                 </button>
                 <button
-                    className={getPlatformButtonClass("gmail")}
+                    className={`tab-button ${getPlatformButtonClass("gmail")}`}
                     onClick={() => { setPlatform("gmail"); setShowSettings(false); }}
-                    title="Gmail & Outlook"
                 >
-                    <i className="bi bi-envelope-fill"></i>
+                    <span className="tab-label">Mail</span>
+                    <i className="bi bi-envelope-fill tab-icon"></i>
                 </button>
                 <button
-                    className={getPlatformButtonClass("teams")}
+                    className={`tab-button ${getPlatformButtonClass("teams")}`}
                     onClick={() => { setPlatform("teams"); setShowSettings(false); }}
-                    title="Microsoft Teams"
                 >
-                    <i className="bi bi-microsoft-teams"></i>
+                    <span className="tab-label">Teams</span>
+                    <i className="bi bi-microsoft-teams tab-icon"></i>
                 </button>
             </div>
 
