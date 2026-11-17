@@ -23,6 +23,6 @@ build
 *.njsproj
 *.sln
 *.sw?
+xcuserdata/
 
-
-Makefile
+*.zip
